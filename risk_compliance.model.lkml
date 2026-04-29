@@ -21,6 +21,9 @@
 connection: "payments_demo"
 
 include: "/views/*.view.lkml"
+include: "/dashboards/kyc_kyb_onboarding_funnel.dashboard.lookml"
+include: "/dashboards/fraud_operations_live.dashboard.lookml"
+include: "/dashboards/chargebacks_disputes.dashboard.lookml"
 
 # ----------------------------------------------------------------------------
 # Cache policies — risk dashboards need to be near-real-time. Default 15min.

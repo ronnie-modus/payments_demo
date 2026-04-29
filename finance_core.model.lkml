@@ -13,6 +13,10 @@
 connection: "payments_demo"
 
 include: "/views/*.view.lkml"
+include: "/dashboards/cfo_executive_overview.dashboard.lookml"
+include: "/dashboards/ar_aging_collections.dashboard.lookml"
+include: "/dashboards/ap_operations.dashboard.lookml"
+include: "/dashboards/card_acquiring_margin.dashboard.lookml"
 
 # ----------------------------------------------------------------------------
 # Cache policies

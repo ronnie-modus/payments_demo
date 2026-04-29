@@ -7,7 +7,10 @@
   filters:
     - name: date_range
       title: "Date Range"
-      type: string_filter
+      type: field_filter
+      model: finance_core
+      explore: payments
+      field: payments.created_date
       default_value: "30 days"
       allow_multiple_values: false
       required: false
@@ -65,8 +68,7 @@
       fields: [card_transactions.total_net_settlement_amount]
       filters:
         card_transactions.outcome: "approved"
-      listen:
-        date_range: card_transactions.created_date
+      # note: cross-explore listen is silently ignored — card tile is unfiltered by date
       row: 0
       col: 18
       width: 6
@@ -105,7 +107,7 @@
       height: 8
 
     # ---------- DETAIL ROW -------------------------------------------------
-    - title: "Top Customers by Lifetime Revenue"
+    - title: "Top Customers by ARR"
       name: top_customers_by_revenue
       model: finance_core
       explore: organizations
@@ -115,10 +117,10 @@
         - organizations.account_status
         - plans.name
         - subscriptions.total_arr_usd
-        - payments.total_amount_usd
-      sorts: [payments.total_amount_usd desc]
+        - subscriptions.total_mrr_usd
+      sorts: [subscriptions.total_arr_usd desc]
       filters:
-        payments.status: "completed"
+        subscriptions.status: "active,trialing,past_due"
       limit: 25
       row: 12
       col: 0

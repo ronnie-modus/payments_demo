@@ -18,7 +18,8 @@
 connection: "payments_demo"
 
 include: "/views/*.view.lkml"
-include: "/dashboards/*.dashboard.lookml"
+include: "/dashboards/release_health_quality.dashboard.lookml"
+include: "/dashboards/page_errors_live.dashboard.lookml"
 
 # ----------------------------------------------------------------------------
 # Cache policies

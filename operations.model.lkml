@@ -14,6 +14,8 @@
 connection: "payments_demo"
 
 include: "/views/*.view.lkml"
+include: "/dashboards/support_operations.dashboard.lookml"
+include: "/dashboards/csm_health_coverage.dashboard.lookml"
 
 # ----------------------------------------------------------------------------
 # Cache policies — ops dashboards are intra-day, so 1h cache is the default.

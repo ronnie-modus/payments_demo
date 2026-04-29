@@ -8,6 +8,7 @@
     - name: release_type
       title: "Release Type"
       type: field_filter
+      model: product_analytics
       default_value: ""
       allow_multiple_values: true
       required: false
@@ -20,6 +21,7 @@
     - name: released_date
       title: "Released Date"
       type: field_filter
+      model: product_analytics
       default_value: "90 days"
       allow_multiple_values: true
       required: false

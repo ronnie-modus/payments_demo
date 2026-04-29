@@ -8,6 +8,7 @@
     - name: csm
       title: "CSM"
       type: field_filter
+      model: operations
       default_value: ""
       allow_multiple_values: true
       required: false
@@ -20,6 +21,7 @@
     - name: segment
       title: "Segment"
       type: field_filter
+      model: operations
       default_value: ""
       allow_multiple_values: true
       required: false

@@ -8,6 +8,7 @@
     - name: network
       title: "Card Network"
       type: field_filter
+      model: risk_compliance
       default_value: ""
       allow_multiple_values: true
       required: false
@@ -20,6 +21,7 @@
     - name: reason_category
       title: "Reason Category"
       type: field_filter
+      model: risk_compliance
       default_value: ""
       allow_multiple_values: true
       required: false
@@ -32,6 +34,7 @@
     - name: received_date
       title: "Received Date"
       type: field_filter
+      model: risk_compliance
       default_value: "90 days"
       allow_multiple_values: true
       required: false

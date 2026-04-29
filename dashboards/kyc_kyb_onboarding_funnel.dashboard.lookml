@@ -8,6 +8,7 @@
     - name: provider
       title: "Provider"
       type: field_filter
+      model: risk_compliance
       default_value: ""
       allow_multiple_values: true
       required: false
@@ -20,6 +21,7 @@
     - name: check_type
       title: "Check Type"
       type: field_filter
+      model: risk_compliance
       default_value: ""
       allow_multiple_values: true
       required: false
@@ -32,6 +34,7 @@
     - name: started_date
       title: "Started Date"
       type: field_filter
+      model: risk_compliance
       default_value: "30 days"
       allow_multiple_values: true
       required: false

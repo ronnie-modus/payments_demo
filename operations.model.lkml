@@ -33,17 +33,7 @@ datagroup: ops_daily {
 
 
 # ============================================================================
-# ACCESS GRANTS
-# ============================================================================
-access_grant: can_view_pii {
-  user_attribute: department
-  allowed_values: ["cx", "support", "csm", "executive", "compliance"]
-}
 
-access_grant: can_view_internal_notes {
-  user_attribute: department
-  allowed_values: ["cx", "support", "csm", "executive"]
-}
 
 
 # ============================================================================
@@ -120,7 +110,6 @@ explore: users {
   group_label:  "Customers"
   persist_with: ops_default
 
-  required_access_grants: [can_view_pii]
 
   join: user_organizations {
     type:         left_outer
@@ -299,7 +288,7 @@ explore: csm_assignments {
   join: csm_activities {
     type:         left_outer
     sql_on:       ${csm_assignments.organization_id} = ${csm_activities.organization_id}
-                  AND ${csm_assignments.csm_user_id} = ${csm_activities.csm_user_id} ;;
+      AND ${csm_assignments.csm_user_id} = ${csm_activities.csm_user_id} ;;
     relationship: one_to_many
   }
 

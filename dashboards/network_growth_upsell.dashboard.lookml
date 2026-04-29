@@ -8,6 +8,7 @@
     - name: country
       title: "Buyer Country"
       type: field_filter
+      model: marketing
       default_value: ""
       allow_multiple_values: true
       required: false
@@ -20,6 +21,7 @@
     - name: industry
       title: "Buyer Industry"
       type: field_filter
+      model: marketing
       default_value: ""
       allow_multiple_values: true
       required: false

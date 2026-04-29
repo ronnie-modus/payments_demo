@@ -8,6 +8,7 @@
     - name: date_range
       title: "Transaction Date"
       type: field_filter
+      model: finance_core
       default_value: "30 days"
       allow_multiple_values: true
       required: false
@@ -20,6 +21,7 @@
     - name: processor
       title: "Processor"
       type: field_filter
+      model: finance_core
       default_value: ""
       allow_multiple_values: true
       required: false
@@ -52,7 +54,7 @@
       type: single_value
       fields: [card_transactions.total_amount_usd]
       filters:
-        card_transactions.status: "approved"
+        card_transactions.outcome: "approved"
       listen:
         date_range: card_transactions.created_date
         processor: processors.name
@@ -68,7 +70,7 @@
       type: single_value
       fields: [card_transactions.total_interchange_amount]
       filters:
-        card_transactions.status: "approved"
+        card_transactions.outcome: "approved"
       listen:
         date_range: card_transactions.created_date
         processor: processors.name
@@ -84,7 +86,7 @@
       type: single_value
       fields: [card_transactions.total_net_settlement_amount]
       filters:
-        card_transactions.status: "approved"
+        card_transactions.outcome: "approved"
       listen:
         date_range: card_transactions.created_date
         processor: processors.name
@@ -100,7 +102,7 @@
       type: looker_area
       fields: [card_transactions.created_date, card_transactions.total_amount_usd]
       filters:
-        card_transactions.status: "approved"
+        card_transactions.outcome: "approved"
       sorts: [card_transactions.created_date asc]
       listen:
         date_range: card_transactions.created_date
@@ -131,7 +133,7 @@
       type: looker_bar
       fields: [mcc_codes.category, card_transactions.total_amount_usd]
       filters:
-        card_transactions.status: "approved"
+        card_transactions.outcome: "approved"
       sorts: [card_transactions.total_amount_usd desc]
       limit: 15
       listen:
@@ -154,7 +156,7 @@
         - card_transactions.total_interchange_amount
         - card_transactions.total_net_settlement_amount
       filters:
-        card_transactions.status: "approved"
+        card_transactions.outcome: "approved"
       sorts: [card_transactions.total_net_settlement_amount desc]
       limit: 25
       listen:

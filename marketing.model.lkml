@@ -14,6 +14,7 @@
 connection: "payments_demo"
 
 include: "/views/*.view.lkml"
+include: "/dashboards/*.dashboard.lookml"
 
 # ----------------------------------------------------------------------------
 # Cache policies

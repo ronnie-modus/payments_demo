@@ -8,6 +8,7 @@
     - name: error_type
       title: "Error Type"
       type: field_filter
+      model: product_analytics
       default_value: ""
       allow_multiple_values: true
       required: false
@@ -20,6 +21,7 @@
     - name: occurred_date
       title: "Occurred Date"
       type: field_filter
+      model: product_analytics
       default_value: "7 days"
       allow_multiple_values: true
       required: false

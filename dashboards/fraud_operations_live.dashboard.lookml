@@ -8,6 +8,7 @@
     - name: target_type
       title: "Target Type"
       type: field_filter
+      model: risk_compliance
       default_value: ""
       allow_multiple_values: true
       required: false
@@ -20,6 +21,7 @@
     - name: created_date
       title: "Score Date"
       type: field_filter
+      model: risk_compliance
       default_value: "7 days"
       allow_multiple_values: true
       required: false

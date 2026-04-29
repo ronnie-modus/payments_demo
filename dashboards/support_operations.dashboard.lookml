@@ -8,6 +8,7 @@
     - name: priority
       title: "Priority"
       type: field_filter
+      model: operations
       default_value: ""
       allow_multiple_values: true
       required: false
@@ -20,6 +21,7 @@
     - name: channel
       title: "Channel"
       type: field_filter
+      model: operations
       default_value: ""
       allow_multiple_values: true
       required: false
@@ -32,6 +34,7 @@
     - name: created_date
       title: "Created Date"
       type: field_filter
+      model: operations
       default_value: "30 days"
       allow_multiple_values: true
       required: false

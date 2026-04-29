@@ -8,6 +8,7 @@
     - name: channel
       title: "Channel"
       type: field_filter
+      model: marketing
       default_value: ""
       allow_multiple_values: true
       required: false
@@ -20,6 +21,7 @@
     - name: campaign_type
       title: "Campaign Type"
       type: field_filter
+      model: marketing
       default_value: ""
       allow_multiple_values: true
       required: false
@@ -32,6 +34,7 @@
     - name: started_at_date
       title: "Started Date"
       type: field_filter
+      model: marketing
       default_value: "90 days"
       allow_multiple_values: true
       required: false

@@ -8,6 +8,7 @@
     - name: organization
       title: "Organization"
       type: field_filter
+      model: finance_core
       default_value: ""
       allow_multiple_values: true
       required: false
@@ -20,6 +21,7 @@
     - name: bill_status
       title: "Bill Status"
       type: field_filter
+      model: finance_core
       default_value: ""
       allow_multiple_values: true
       required: false

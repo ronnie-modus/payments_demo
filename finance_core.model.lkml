@@ -35,22 +35,12 @@ datagroup: hourly_refresh {
 
 
 # ============================================================================
-# ACCESS GRANTS
-# ============================================================================
 # Field-level + view-level visibility tied to a Looker user attribute.
 # The user attributes must exist in Looker Admin > User Attributes before
 # enforcement kicks in (per gotcha #20). Until then these grants are
 # effectively no-ops — the LookML still validates.
 
-access_grant: can_view_financials {
-  user_attribute: department
-  allowed_values: ["finance", "executive", "revops"]
-}
 
-access_grant: can_view_cogs {
-  user_attribute: department
-  allowed_values: ["finance", "executive"]
-}
 
 
 # ============================================================================
@@ -137,7 +127,6 @@ explore: organizations {
   }
 
   join: revenue_recognition {
-    required_access_grants: [can_view_financials]
     type:         left_outer
     sql_on:       ${organizations.id} = ${revenue_recognition.organization_id} ;;
     relationship: one_to_many
@@ -436,7 +425,6 @@ explore: platform_invoices {
   group_label: "Revenue"
   persist_with: finance_core_default
 
-  required_access_grants: [can_view_financials]
 
   join: organizations {
     type:         left_outer
@@ -473,7 +461,6 @@ explore: cogs_entries {
   group_label: "Revenue"
   persist_with: finance_core_default
 
-  required_access_grants: [can_view_cogs]
 
   join: organizations {
     type:         left_outer

@@ -153,4 +153,20 @@ view: customer_health_scores {
     group_label: "Counts"
   }
 
+  measure: average_health_score {
+    type: average
+    sql: ${TABLE}.health_score ;;
+    value_format_name: decimal_1
+    label: "Average Health Score"
+    group_label: "Health"
+  }
+
+  measure: average_churn_risk_score {
+    type: average
+    sql: ${TABLE}.churn_risk_score ;;
+    value_format_name: decimal_2
+    label: "Average Churn Risk"
+    group_label: "Health"
+  }
+
 }

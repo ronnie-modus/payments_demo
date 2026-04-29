@@ -39,17 +39,7 @@ datagroup: risk_daily {
 
 
 # ============================================================================
-# ACCESS GRANTS — risk data is sensitive
-# ============================================================================
-access_grant: can_view_pii {
-  user_attribute: department
-  allowed_values: ["risk", "compliance", "executive", "legal"]
-}
 
-access_grant: can_view_audit_log {
-  user_attribute: department
-  allowed_values: ["compliance", "executive", "legal", "security"]
-}
 
 
 # ============================================================================
@@ -302,7 +292,6 @@ explore: audit_log {
   group_label:  "Compliance"
   persist_with: risk_daily
 
-  required_access_grants: [can_view_audit_log]
 
   join: organizations {
     type:         left_outer

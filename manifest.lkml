@@ -1,5 +1,4 @@
 project_name: "payments_demo"
-label:        "Payments Demo"
 
 # ----------------------------------------------------------------------------
 # Project-wide constants — referenced anywhere in LookML as @{constant_name}

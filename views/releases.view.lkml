@@ -33,7 +33,7 @@ view: releases {
 
   dimension: owner_user_id {
     type: number
-    sql: ${TABLE}.owner_user_id ;;
+    sql: SAFE_CAST(${TABLE}.owner_user_id AS INT64) ;;
     hidden: yes
     value_format_name: id
     description: "Foreign key to users.id"
@@ -51,7 +51,7 @@ view: releases {
 
   dimension: feature_flag_id {
     type: number
-    sql: ${TABLE}.feature_flag_id ;;
+    sql: SAFE_CAST(${TABLE}.feature_flag_id AS INT64) ;;
     hidden: yes
     value_format_name: id
     description: "Foreign key to feature_flags.id"
@@ -59,7 +59,7 @@ view: releases {
 
   dimension: linked_partnership_id {
     type: number
-    sql: ${TABLE}.linked_partnership_id ;;
+    sql: SAFE_CAST(${TABLE}.linked_partnership_id AS INT64) ;;
     hidden: yes
     value_format_name: id
     description: "Foreign key to partnerships.id"

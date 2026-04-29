@@ -112,7 +112,7 @@ view: support_tickets {
 
   dimension: linked_release_id {
     type: number
-    sql: ${TABLE}.linked_release_id ;;
+    sql: SAFE_CAST(${TABLE}.linked_release_id AS INT64) ;;
     hidden: yes
     value_format_name: id
     description: "Foreign key to releases.id"

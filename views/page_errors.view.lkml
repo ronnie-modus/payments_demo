@@ -13,7 +13,7 @@ view: page_errors {
 
   dimension: session_id {
     type: number
-    sql: ${TABLE}.session_id ;;
+    sql: SAFE_CAST(${TABLE}.session_id AS INT64) ;;
     hidden: yes
     value_format_name: id
     description: "Foreign key to sessions.id"
@@ -21,7 +21,7 @@ view: page_errors {
 
   dimension: user_id {
     type: number
-    sql: ${TABLE}.user_id ;;
+    sql: SAFE_CAST(${TABLE}.user_id AS INT64) ;;
     hidden: yes
     value_format_name: id
     description: "Foreign key to users.id"
@@ -29,7 +29,7 @@ view: page_errors {
 
   dimension: organization_id {
     type: number
-    sql: ${TABLE}.organization_id ;;
+    sql: SAFE_CAST(${TABLE}.organization_id AS INT64) ;;
     hidden: yes
     value_format_name: id
     description: "Foreign key to organizations.id"
@@ -37,7 +37,7 @@ view: page_errors {
 
   dimension: registry_counterparty_id {
     type: number
-    sql: ${TABLE}.registry_counterparty_id ;;
+    sql: SAFE_CAST(${TABLE}.registry_counterparty_id AS INT64) ;;
     hidden: yes
     value_format_name: id
     description: "Foreign key to registry_counterparties.id"
@@ -107,7 +107,7 @@ view: page_errors {
 
   dimension: linked_release_id {
     type: number
-    sql: ${TABLE}.linked_release_id ;;
+    sql: SAFE_CAST(${TABLE}.linked_release_id AS INT64) ;;
     hidden: yes
     value_format_name: id
     description: "Foreign key to releases.id"
@@ -115,7 +115,7 @@ view: page_errors {
 
   dimension: linked_partnership_id {
     type: number
-    sql: ${TABLE}.linked_partnership_id ;;
+    sql: SAFE_CAST(${TABLE}.linked_partnership_id AS INT64) ;;
     hidden: yes
     value_format_name: id
     description: "Foreign key to partnerships.id"
@@ -152,7 +152,7 @@ view: page_errors {
 
   measure: count_distinct_organizations {
     type: count_distinct
-    sql: ${TABLE}.organization_id ;;
+    sql: SAFE_CAST(${TABLE}.organization_id AS INT64) ;;
     label: "Unique Organizations"
     group_label: "Counts"
   }

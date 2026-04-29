@@ -295,4 +295,32 @@ view: invoices {
     group_label: "Counts"
   }
 
+  # ----- Amount sums (multi-currency: filter currency_code at query time) ----
+  measure: total_amount_sum {
+    type: sum
+    sql: ${TABLE}.total_amount ;;
+    value_format_name: decimal_2
+    label: "Total Invoice Amount"
+    description: "Sum of total_amount. Filter currency_code to a single currency for a meaningful number."
+    group_label: "Amounts"
+  }
+
+  measure: total_paid_sum {
+    type: sum
+    sql: ${TABLE}.paid_amount ;;
+    value_format_name: decimal_2
+    label: "Total Paid"
+    description: "Sum of paid_amount. Filter currency_code at query time."
+    group_label: "Amounts"
+  }
+
+  measure: total_balance_sum {
+    type: sum
+    sql: ${TABLE}.balance_amount ;;
+    value_format_name: decimal_2
+    label: "Total Outstanding Balance"
+    description: "Sum of balance_amount. Filter currency_code at query time."
+    group_label: "Amounts"
+  }
+
 }

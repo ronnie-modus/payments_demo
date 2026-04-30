@@ -65,15 +65,9 @@ explore: organizations {
     relationship: many_to_one
   }
 
-  join: organization_partnerships {
-    type:         left_outer
-    sql_on:       ${organizations.id} = ${organization_partnerships.organization_id} ;;
-    relationship: one_to_many
-  }
-
   join: partnerships {
     type:         left_outer
-    sql_on:       ${organization_partnerships.partnership_id} = ${partnerships.id} ;;
+    sql_on:       ${organizations.partner_id} = ${partnerships.id} ;;
     relationship: many_to_one
   }
 

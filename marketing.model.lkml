@@ -84,16 +84,10 @@ explore: partnerships {
   group_label:  "Partnerships"
   persist_with: marketing_default
 
-  join: organization_partnerships {
-    type:         left_outer
-    sql_on:       ${partnerships.id} = ${organization_partnerships.partnership_id} ;;
-    relationship: one_to_many
-  }
-
   join: organizations {
     type:         left_outer
-    sql_on:       ${organization_partnerships.organization_id} = ${organizations.id} ;;
-    relationship: many_to_one
+    sql_on:       ${organizations.partner_id} = ${partnerships.id} ;;
+    relationship: one_to_many
   }
 
   join: releases {

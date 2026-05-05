@@ -21,6 +21,7 @@
 connection: "payments_demo"
 
 include: "/views/*.view.lkml"
+include: "/dashboards/security_audit_intelligence.dashboard.lookml"
 include: "/dashboards/kyc_kyb_onboarding_funnel.dashboard.lookml"
 include: "/dashboards/fraud_operations_live.dashboard.lookml"
 include: "/dashboards/chargebacks_disputes.dashboard.lookml"

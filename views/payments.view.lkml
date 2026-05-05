@@ -298,6 +298,22 @@ view: payments {
 
 
 
+  measure: total_platform_fee_amount_usd {
+    type: sum
+    sql: ${TABLE}.platform_fee_amount ;;
+    value_format_name: usd_0
+    label: "Total Platform Fee (USD)"
+    group_label: "Amounts"
+  }
+
+  measure: total_third_party_fee_amount_usd {
+    type: sum
+    sql: ${TABLE}.third_party_fee_amount ;;
+    value_format_name: usd_0
+    label: "Total Third-Party Fee (USD)"
+    group_label: "Amounts"
+  }
+
   measure: count_distinct_organizations {
     type: count_distinct
     sql: ${TABLE}.organization_id ;;

@@ -18,6 +18,7 @@
 connection: "payments_demo"
 
 include: "/views/*.view.lkml"
+include: "/dashboards/product_engagement_deep_dive.dashboard.lookml"
 include: "/dashboards/release_health_quality.dashboard.lookml"
 include: "/dashboards/page_errors_live.dashboard.lookml"
 

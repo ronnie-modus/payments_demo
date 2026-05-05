@@ -13,6 +13,9 @@
 connection: "payments_demo"
 
 include: "/views/*.view.lkml"
+include: "/dashboards/payment_flow_analysis.dashboard.lookml"
+include: "/dashboards/subscription_lifecycle.dashboard.lookml"
+include: "/dashboards/unit_economics_cogs.dashboard.lookml"
 include: "/dashboards/cfo_executive_overview.dashboard.lookml"
 include: "/dashboards/ar_aging_collections.dashboard.lookml"
 include: "/dashboards/ap_operations.dashboard.lookml"
@@ -516,6 +519,29 @@ explore: fx_conversions {
   join: processors {
     type:         left_outer
     sql_on:       ${fx_conversions.processor_id} = ${processors.id} ;;
+    relationship: many_to_one
+  }
+}
+
+
+# ============================================================================
+# EXPLORE: revenue_recognition — booked revenue entries
+# ============================================================================
+explore: revenue_recognition {
+  label:       "Revenue Recognition"
+  description: "Booked revenue recognition entries by category, GL account, and recognition type."
+  group_label: "Finance"
+  persist_with: finance_core_default
+
+  join: organizations {
+    type:         left_outer
+    sql_on:       ${revenue_recognition.organization_id} = ${organizations.id} ;;
+    relationship: many_to_one
+  }
+
+  join: platform_invoices {
+    type:         left_outer
+    sql_on:       ${revenue_recognition.platform_invoice_id} = ${platform_invoices.id} ;;
     relationship: many_to_one
   }
 }

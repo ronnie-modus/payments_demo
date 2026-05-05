@@ -167,14 +167,14 @@
       width: 12
       height: 9
 
-    - title: "Page Views with Errors"
+    - title: "Page Views by Category (Error vs Clean)"
       name: error_pages
       model: product_analytics
       explore: page_views
-      type: looker_bar
-      fields: [page_views.page_category, page_views.count]
-      filters:
-        page_views.had_error: "Yes"
+      type: looker_column
+      fields: [page_views.page_category, page_views.had_error, page_views.count]
+      pivots: [page_views.had_error]
+      stacking: normal
       sorts: [page_views.count desc]
       limit: 10
       listen:

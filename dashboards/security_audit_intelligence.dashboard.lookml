@@ -112,7 +112,6 @@
       fields: [login_attempts.failure_reason, login_attempts.count]
       filters:
         login_attempts.outcome: "failed"
-        login_attempts.failure_reason: "-NULL"
       sorts: [login_attempts.count desc]
       limit: 10
       listen:
@@ -218,12 +217,11 @@
         - login_attempts.auth_method
         - login_attempts.ip_address
         - login_attempts.risk_score
-      filters:
-        login_attempts.outcome: "failed"
       sorts: [login_attempts.risk_score desc]
       limit: 50
       listen:
         date_range: login_attempts.attempted_date
+        outcome: login_attempts.outcome
       row: 28
       col: 0
       width: 24
